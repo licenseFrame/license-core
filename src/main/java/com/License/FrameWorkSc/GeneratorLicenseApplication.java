@@ -16,7 +16,7 @@ public class GeneratorLicenseApplication {
 	public static void main(String[] args) {
     try {
             // Set the expiration date you want for the client
-            String expirationDate = "2025-06-01"; // YYYY-MM-DD
+            String expirationDate = "2025-12-31"; // YYYY-MM-DD
             
             String licenseToken = encrypt(expirationDate);
             
