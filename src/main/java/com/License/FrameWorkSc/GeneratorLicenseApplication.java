@@ -10,33 +10,30 @@ import static org.springframework.data.redis.serializer.RedisSerializationContex
 
 @SpringBootApplication
 public class GeneratorLicenseApplication {
-  // MUST MATCH THE KEY IN AppLicenseService
-    private static final String SECRET_KEY = "ControlCout#2024"; 
+    // MUST MATCH THE KEY IN AppLicenseService
 
-	public static void main(String[] args) {
-    try {
+    private static final String SECRET_KEY = "ControlCout#2024";
+
+    public static void main(String[] args) {
+        try {
             // Set the expiration date you want for the client
-            String expirationDate = "2025-12-31"; // YYYY-MM-DD
-            
+            String expirationDate = "2026-10-01"; // YYYY-MM-DD
+
             String licenseToken = encrypt(expirationDate);
-            
+
             System.out.println("=== GENERATED LICENSE TOKEN ===");
             System.out.println("Expire Date: " + expirationDate);
             System.out.println("Token: " + licenseToken);
             System.out.println("===============================");
-            
-            // Output example: "I/xxxx/yyyy..."
-            // You copy this token and insert it into the client's 'app_license' table.
-            
+ 
         } catch (Exception e) {
             e.printStackTrace();
         }
-            
-            
-		SpringApplication.run(GeneratorLicenseApplication.class, args);
-	
-                
-        }
+
+        SpringApplication.run(GeneratorLicenseApplication.class, args);
+
+    }
+
     private static String encrypt(String strToEncrypt) throws Exception {
         SecretKeySpec secretKey = new SecretKeySpec(SECRET_KEY.getBytes(StandardCharsets.UTF_8), "AES");
         Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
