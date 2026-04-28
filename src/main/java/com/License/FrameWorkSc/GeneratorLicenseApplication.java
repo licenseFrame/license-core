@@ -12,12 +12,14 @@ import static org.springframework.data.redis.serializer.RedisSerializationContex
 public class GeneratorLicenseApplication {
     // MUST MATCH THE KEY IN AppLicenseService
 
-    private static final String SECRET_KEY = "ControlCout#2024";
+//    private static final String SECRET_KEY = "ControlCout#2024";
+        private static final String SECRET_KEY = "FrameWork#2026";
+
 
     public static void main(String[] args) {
         try {
             // Set the expiration date you want for the client
-            String expirationDate = "2026-10-01"; // YYYY-MM-DD
+            String expirationDate = "2027-01-01"; // YYYY-MM-DD
 
             String licenseToken = encrypt(expirationDate);
 
